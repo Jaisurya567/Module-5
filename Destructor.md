@@ -1,41 +1,50 @@
-# Exp.No:16  
-## DICTIONARY - SIZE OF DICTIONARY
+# Exp.No:22  
+## Destructor
 
 ---
 
 ### AIM  
-To write a Python program to print the size of a dictionary using `getsizeof()` from the `sys` module.
+To create a Python class `Student` with a destructor.
 
 ---
 
 ### ALGORITHM
 
 1. Begin the program.  
-2. Import the `sys` module to use the `getsizeof()` function.  
-3. Define the dictionaries with key-value pairs (`dic1`, `dic2`, `dic3`).  
-4. Use `sys.getsizeof()` to calculate the memory size of each dictionary.  
-5. Print the size of each dictionary in bytes.  
+2. Define the `student` class.  
+3. Inside the `student` class, define the `__init__` method (constructor) and the `__del__` method (destructor).  
+4. Create an object `s2` of the `student` class. When the object `s2` is created, the `__init__` method is called, and its print statements are executed.  
+5. Use the `del` statement to delete the object `s2`. This triggers the `__del__` method (destructor), and the respective print statements are executed.  
 6. Terminate the program.
 
 ---
 
 ### PROGRAM
 
-``
-import sys
-dic1 = {"A": 1, "B": 2, "C": 3}
-dic2 = {"saveetha": "Raju", "sec": "Nikhil", "Geek3": "Deepanshu"}
-dic3 = {1: "Lion", 2: "Tiger", 3: "Fox", 4: "Wolf"}
+```
 
-print("Size of dic1:", str(sys.getsizeof(dic1)) + " bytes")
-print("Size of dic2:", str(sys.getsizeof(dic2)) + " bytes")
-print("Size of dic3:", str(sys.getsizeof(dic3)) + " bytes")
+
+class Student:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def printDetail(self):
+        print(f"My name is {self.name} and I am {self.age} years old.")
+
+    def __del__(self):
+        print(f"{self.name} student is deleted.")
+
+s1 = Student("Vishvajit Rao", 22)
+s1.printDetail()
+del s1
+
 
 ```
 
 ### OUTPUT
-![image](https://github.com/user-attachments/assets/7dba72f6-4a55-42eb-9ae2-4e587db2c358)
+![image](https://github.com/user-attachments/assets/87b2da7f-583a-41a7-8cec-0536561d6f7e)
 
 
 ### RESULT
-Thus the program to print the size of a dictionary using getsizeof() from the sys module has been implemented and executed successfully.
+Thus the program to create a Python class Student with a destructor has been implemented and executed successfully.
